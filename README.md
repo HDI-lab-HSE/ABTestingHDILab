@@ -16,6 +16,7 @@
  - cvxpy == 1.3.2
  При этом поддержка GPU для данной версии pytorch не является необходимой. Установить нужную версию pytorch при помощи менеджера пакетов conda можно, например, при помощи команды
  - conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cpuonly -c pytorch
+ 
  Более подробную документацию можно найти по ссылке https://pytorch.org/get-started/previous-versions/.
 
 
