@@ -27,8 +27,6 @@
 
 - statsmodels == 0.12.2
 
-- tqdm == 4.66.1
-
  Для запуска ноутбуков `calibration.ipynb` и `change_point.ipynb` требуются библиотеки
  - pytorch == 1.11.0
  - torchvision == 0.12.0
