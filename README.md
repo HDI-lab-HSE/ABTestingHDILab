@@ -37,6 +37,10 @@
  - conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cpuonly -c pytorch
  
  Более подробную документацию можно найти по ссылке https://pytorch.org/get-started/previous-versions/.
+ 
+ Для запуска ноутбука `OT_homogeneity_test_with_pot.ipynb` требуется библиотека для оптимального транспорта POT версии
+ - pot == 0.4.0 
+
 
 
  
