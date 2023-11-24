@@ -4,7 +4,7 @@ import scipy
 from numpy.linalg import norm
 from numpy.random import default_rng
 from random import choice
-import cvxpy as cvx
+import json
 
 import scipy.stats as st
 from sklearn.metrics.pairwise import pairwise_distances
@@ -14,8 +14,6 @@ import os, sys
 import ot
 
 from tqdm import tqdm
-
-%matplotlib inline
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib import rc
@@ -232,7 +230,7 @@ def OT_geod(V, T, t):
 
 #main part begins
 #таблица, для которой фиксируются критические значения
-grd = 5*np.array([10,20])#,30,40,50,60,70,80,90,100])
+grd = 5*np.array([10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200])
 print(grd)
 
 test_values  = []
@@ -245,12 +243,12 @@ for g in tqdm(grd):
     print("gen random ball time: ",time.time() - start_time)
     # Алгоритм 3
     start_time = time.time()
-    cr_l = compute_critical_level(ball = b, N=500, alpha=.05)
+    cr_l = compute_critical_level(ball = b, N=1000, alpha=.05)
     print("gen critical level time: ",time.time() - start_time)
     critical_levels.append(cr_l)
 
-data = {}
-data['grid'] = grd
+data = {'grid':[],'crit_vals':[]}
+data['grid'] = grd.tolist()
 data['crit_vals'] = critical_levels
 
 with open('crit_vals.json', 'w') as fp:
