@@ -230,7 +230,7 @@ def OT_geod(V, T, t):
 
 #main part begins
 #таблица, для которой фиксируются критические значения
-grd = 5*np.array([10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200])
+grd = 50*np.array(1 + np.arange(20))
 print(grd)
 
 test_values  = []
@@ -239,7 +239,7 @@ critical_levels = []
 for g in tqdm(grd):
     # Алгоритм 2, шаг 2
     start_time = time.time()
-    b = gen_random_ball(dimension=2, num_points=2*g, rs=None, radius = 1)
+    b = gen_random_ball(dimension=1, num_points=2*g, rs=None, radius = 1)
     print("gen random ball time: ",time.time() - start_time)
     # Алгоритм 3
     start_time = time.time()
@@ -251,5 +251,5 @@ data = {'grid':[],'crit_vals':[]}
 data['grid'] = grd.tolist()
 data['crit_vals'] = critical_levels
 
-with open('crit_vals.json', 'w') as fp:
+with open('crit_vals_d_1.json', 'w') as fp:
     json.dump(data, fp)
